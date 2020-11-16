@@ -1,0 +1,40 @@
+$--color-primary: #409EFF !default; 
+$--color-white: #FFFFFF !default;
+$--color-black: #000000 !default;
+
+$--color-success: #67C23A !default;
+$--color-warning: #E6A23C !default;
+$--color-danger: #F56C6C !default;
+$--color-info: #909399 !default;
+
+$--color-text-primary: #303133 !default;
+$--border-color-base: #DCDFE6 !default;
+
+$--font-size-base: 14px !default;
+
+$--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* 53a8ff */
+$--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* 66b1ff */
+$--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default; /* 79bbff */
+$--color-primary-light-4: mix($--color-white, $--color-primary, 40%) !default; /* 8cc5ff */
+$--color-primary-light-5: mix($--color-white, $--color-primary, 50%) !default; /* a0cfff */
+$--color-primary-light-6: mix($--color-white, $--color-primary, 60%) !default; /* b3d8ff */
+$--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default; /* c6e2ff */
+$--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default; /* d9ecff */
+$--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /* ecf5ff */
+
+// border
+$--border-base: 1px solid $--color-primary !default;
+$--border-radius-base: 4px !default;
+
+$--button-padding-vertical: 12px !default;
+$--button-padding-horizontal: 20px !default;
+
+$--button-medium-padding-vertical: 8px !default;
+$--button-medium-padding-horizontal: 16px !default;
+$--button-small-padding-vertical: 8px !default;
+$--button-small-padding-horizontal: 16px !default;
+
+$--button-medium-font-size: $--font-size-base;
+$--button-small-font-size: 12px !default;
+
+$--button-hover-tint-percent: 20% !default;

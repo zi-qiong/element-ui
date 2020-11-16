@@ -1,0 +1,131 @@
+@import "@/assets/common/var.scss";
+@import "@/assets/common/mixins.scss";
+
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size) {
+    padding: $padding-vertical $padding-horizontal;
+    font-size: $font-size;
+    border-radius: $--border-radius-base;
+
+    @include when(circle) {
+        & {
+            padding: $padding-vertical;
+        }
+    }
+}
+
+@mixin button-variant($color, $background-color, $border-color) {
+    color: $color;
+    background-color: $background-color;
+    border-color: $border-color;
+
+    &:hover {
+        background-color: mix($--color-white,
+                $background-color,
+                $--button-hover-tint-percent);
+        border-color: mix($--color-white,
+                $border-color,
+                $--button-hover-tint-percent);
+    }
+
+    &.is-disabled {
+
+        &,
+        &:hover {
+            color: $--color-white;
+            background-color: mix($background-color, $--color-white);
+            border-color: mix($border-color, $--color-white);
+        }
+    }
+
+    @include when(plain) {
+        & {
+            color: $background-color;
+            background-color: mix($background-color, $--color-white, 10%);
+        }
+    }
+
+    @include when(loading) {
+        & {
+            background-color: mix($background-color, $--color-white, 60%);
+            border-color: mix($border-color, $--color-white, 60%);
+        }
+    }
+}
+
+@include b(button) {
+    display: inline-block;
+    cursor: pointer;
+    white-space: nowrap;
+    border: $--border-base;
+    box-sizing: border-box;
+    transition: 0.1s;
+
+    &+& {
+        margin-left: 10px;
+    }
+
+    &:hover {
+        border-color: $--color-primary-light-2;
+        background-color: $--color-primary-light-2;
+    }
+
+    .icon {
+        margin-right: 5px;
+    }
+
+    @include button-size($--button-padding-vertical,
+        $--button-padding-horizontal,
+        $--font-size-base);
+
+    @include m(medium) {
+        @include button-size($--button-medium-padding-vertical,
+            $--button-medium-padding-horizontal,
+            $--button-medium-font-size);
+    }
+
+    @include m(small) {
+        @include button-size($--button-small-padding-vertical,
+            $--button-small-padding-horizontal,
+            $--button-small-font-size);
+    }
+
+    @include m(default) {
+        @include button-variant($--color-white,
+            $--color-primary,
+            $--color-primary);
+    }
+
+    @include m(success) {
+        @include button-variant($--color-white,
+            $--color-success,
+            $--color-success);
+    }
+
+    @include m(warning) {
+        @include button-variant($--color-white,
+            $--color-warning,
+            $--color-warning);
+    }
+
+    @include m(danger) {
+        @include button-variant($--color-white,
+            $--color-danger,
+            $--color-danger);
+    }
+
+    @include when(round) {
+        border-radius: 20px;
+    }
+
+    @include when(circle) {
+        border-radius: 50%;
+
+        .icon {
+            margin-right: 0;
+        }
+    }
+
+    @include when(loading) {
+        pointer-events: none;
+    }
+}

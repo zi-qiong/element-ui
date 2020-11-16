@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+button {
+    outline: none;
+    line-height: 1;
+    margin: 0;
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+@-webkit-keyframes rotating {
+
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+
+}
+
+.el-icon-loading {
+    animation: rotating 2s linear infinite;
+}

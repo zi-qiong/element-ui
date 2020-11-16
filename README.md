@@ -42,4 +42,4 @@ Vue.use(elementUi)
 
 再移步到components/index.js,index.js里面写了install方法，并且install方法里面的主要目的是通过Vue.component注册组件
 
-###### 2、开始写我们的第一个组件，移步到[button](https://github.com/zi-qiong/element-ui/blob/master/src/components/Button/Button.md)吧  [button](/blob/master/src/components/Button/Button.md)
+###### 2、开始写我们的第一个组件，移步到[button](/src/components/Button/Button.md)吧 

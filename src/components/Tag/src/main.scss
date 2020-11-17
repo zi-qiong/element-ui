@@ -1,0 +1,63 @@
+@import "@/assets/common/var.scss";
+@import "@/assets/common/mixins.scss";
+
+@mixin tag-variant($color) {
+    border: 1px solid $color;
+
+    @include when(dark) {
+        color: $color;
+        background-color: $--color-white;
+    }
+
+    @include when(plain) {
+        color: $color;
+        background-color: mix($color, $--color-white, 10%);
+    }
+
+    @include when(dark) {
+        background: $color;
+        color: $--color-white;
+    }
+}
+
+@mixin tag-size($font-size, $padding-vertical, $padding-horizontal) {
+    padding: $padding-vertical $padding-horizontal;
+    font-size: $font-size;
+}
+
+@include b(tag) {
+    font-size: $--font-size-base;
+    padding: 8px 10px;
+    border-radius: $--border-radius-base;
+    border: 1px solid $--border-color-lighter;
+    display: inline-block;
+
+    & + & {
+        margin-left: 10px;
+    }
+    
+    @include m(medium) {
+        @include tag-size($--font-size-medium, 6px, 8px)
+    }
+
+    @include m(small) {
+        @include tag-size($--font-size-small, 4px, 6px)
+    }
+
+    @include m(default) {
+        @include tag-variant($--color-primary)
+    }
+
+    @include m(success) {
+        @include tag-variant($--color-success)
+    }
+
+    @include m(warning) {
+        @include tag-variant($--color-warning)
+    }
+
+    @include m(danger) {
+        @include tag-variant($--color-danger)
+    }
+
+}

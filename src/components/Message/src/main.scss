@@ -1,0 +1,44 @@
+@import "@/assets/common/var.scss";
+@import "@/assets/common/mixins.scss";
+
+@mixin message-variant($color) {
+    border: 1px solid $color;
+    color: $color;
+    background-color: mix($color, $--color-white, 10%);
+}
+
+@include b(message) {
+    border-radius: $--border-radius-base;
+    border: 1px solid $--border-color-lighter;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20%;
+    transition: opacity 0.3s, transform .4s, top 0.4s;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    font-size: $--font-size-base;
+
+    @include m(default) {
+        @include message-variant($--color-primary)
+    }
+
+    @include m(success) {
+        @include message-variant($--color-success)
+    }
+
+    @include m(warning) {
+        @include message-variant($--color-warning)
+    }
+
+    @include m(danger) {
+        @include message-variant($--color-danger)
+    }
+}
+
+.el-message-fade-enter,
+.el-message-fade-leave-active {
+  opacity: 0;
+  transform: translate(-50%, -100%);
+}

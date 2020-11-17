@@ -1,0 +1,28 @@
+@import "@/assets/common/var.scss";
+@import "@/assets/common/mixins.scss";
+
+@include b(card) {
+    border-radius: $--border-radius-base;
+    border: 1px solid $--border-color-lighter;
+    background-color: $--color-white;
+    text-align: left;
+
+    @include when(always-shadow) {
+        box-shadow: $--box-shadow-light;
+    }
+
+    @include when(hover-shadow) {
+        &:hover {
+            box-shadow: $--box-shadow-light;
+        }
+    }
+
+    @include e(head) {
+        padding: 20px;
+        border-bottom: 1px solid $--border-color-lighter;
+    }
+
+    @include e(body) {
+        padding: 20px;
+    }
+}

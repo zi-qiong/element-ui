@@ -9,8 +9,11 @@ $--color-info: #909399 !default;
 
 $--color-text-primary: #303133 !default;
 $--border-color-base: #DCDFE6 !default;
+$--border-color-lighter: #EBEEF5 !default;
 
 $--font-size-base: 14px !default;
+$--font-size-medium: 12px !default;
+$--font-size-small: 10px !default;
 
 $--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* 53a8ff */
 $--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* 66b1ff */
@@ -38,3 +41,4 @@ $--button-medium-font-size: $--font-size-base;
 $--button-small-font-size: 12px !default;
 
 $--button-hover-tint-percent: 20% !default;
+$--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;

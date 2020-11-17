@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <Button>按钮</Button>
+  <div @click="handleClick">
+    <Button >按钮</Button>
     <Button size="medium">按钮</Button>
     <Button size="small">按钮</Button>
 
@@ -33,6 +33,17 @@
       <Clo :span="6" :offset="6">123</Clo>
     </Row>
 
+    <Card>
+      <div slot="header">title</div>
+      <div>body</div>
+    </Card>
+
+
+    <br />
+
+    <Tag>标签</Tag>
+    <Tag size="medium" type="danger" effect="dark">标签</Tag>
+    <Tag size="small" type="success" effect="light">标签</Tag>
   </div>
 </template>
 
@@ -45,5 +56,13 @@ export default {
   // components: {
   //   HelloWorld
   // }
+  methods: {
+    handleClick() {
+      this.$message({
+        message: "这是一条消息提示",
+        type: "success"
+      })
+    }
+  }
 }
 </script>
